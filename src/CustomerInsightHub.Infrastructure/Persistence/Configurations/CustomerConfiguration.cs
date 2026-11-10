@@ -17,6 +17,7 @@ public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
         builder.Property(c => c.Phone).HasMaxLength(50);
         builder.Property(c => c.City).HasMaxLength(100);
         builder.Property(c => c.Country).HasMaxLength(100);
+        builder.Property(c => c.Website).HasMaxLength(200);
 
         builder.HasIndex(c => c.Email).IsUnique();
 

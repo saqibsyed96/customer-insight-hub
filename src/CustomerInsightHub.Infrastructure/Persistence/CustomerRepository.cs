@@ -10,7 +10,7 @@ public class CustomerRepository(AppDbContext db) : ICustomerRepository
         return await db.Customers
             .AsNoTracking()
             .OrderBy(c => c.Name)
-            .Select(c => new CustomerDto(c.Id, c.Name, c.Email, c.Phone, c.City, c.Country, c.CreatedAtUtc))
+            .Select(c => new CustomerDto(c.Id, c.Name, c.Email, c.Phone, c.City, c.Country, c.Website, c.CreatedAtUtc))
             .ToListAsync(cancellationToken);
     }
 }

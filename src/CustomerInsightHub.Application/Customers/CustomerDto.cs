@@ -11,4 +11,5 @@ public record CustomerDto(
     string? Phone,
     string? City,
     string? Country,
+    string? Website,
     DateTime CreatedAtUtc);
