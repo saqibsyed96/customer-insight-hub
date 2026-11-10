@@ -33,7 +33,9 @@ public class CustomerService(ICustomerRepository repository, TimeProvider clock)
 
         var customer = new Customer
         {
-            Id = Guid.NewGuid(),
+            // Version 7 GUIDs are time-ordered, which keeps the SQL Server index tidy
+            // (random GUIDs scatter inserts across the index).
+            Id = Guid.CreateVersion7(),
             CreatedAtUtc = clock.GetUtcNow().UtcDateTime
         };
         Apply(customer, request, email);
