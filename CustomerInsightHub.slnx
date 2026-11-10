@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CustomerInsightHub.Api/CustomerInsightHub.Api.csproj" />
+    <Project Path="src/CustomerInsightHub.Application/CustomerInsightHub.Application.csproj" />
+    <Project Path="src/CustomerInsightHub.Domain/CustomerInsightHub.Domain.csproj" />
+    <Project Path="src/CustomerInsightHub.Infrastructure/CustomerInsightHub.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/CustomerInsightHub.Tests/CustomerInsightHub.Tests.csproj" />
+  </Folder>
+</Solution>
