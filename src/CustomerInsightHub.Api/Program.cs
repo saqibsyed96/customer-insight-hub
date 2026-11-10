@@ -18,8 +18,12 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
-
-app.UseHttpsRedirection();
+else
+{
+    // In development the React dev server proxies plain http requests to this API.
+    // Redirecting them to https would send the browser to a different origin and CORS would block it.
+    app.UseHttpsRedirection();
+}
 
 app.UseAuthorization();
 
