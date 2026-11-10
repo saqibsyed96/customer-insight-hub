@@ -113,6 +113,83 @@ button {
   cursor: pointer;
 }
 
+button.primary {
+  color: #ffffff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.customer-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.customer-form h2,
+.customer-form .form-error,
+.customer-form .form-actions {
+  grid-column: 1 / -1;
+}
+
+.customer-form h2 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--text-strong);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-field label {
+  font-size: 14px;
+  color: var(--text-strong);
+}
+
+.form-field input {
+  padding: 8px 12px;
+  font: inherit;
+  color: var(--text-strong);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.form-field input[aria-invalid='true'] {
+  border-color: var(--danger);
+}
+
+.field-error,
+.form-error {
+  margin: 0;
+  font-size: 14px;
+  color: var(--danger);
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+}
+
 /* Phones: let the table scroll sideways instead of squashing. */
 @media (max-width: 640px) {
   table {
