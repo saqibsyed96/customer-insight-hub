@@ -1,0 +1,44 @@
+@host = http://localhost:5099
+
+### List all customers
+GET {{host}}/api/customers
+
+### Create a customer (copy the returned "id" into the requests below)
+POST {{host}}/api/customers
+Content-Type: application/json
+
+{
+  "name": "Test Bakery",
+  "email": "hello@test-bakery.example",
+  "phone": "+1-555-0199",
+  "city": "Denver",
+  "country": "USA",
+  "website": "https://test-bakery.example"
+}
+
+### Get one customer (replace the id)
+GET {{host}}/api/customers/00000000-0000-0000-0000-000000000000
+
+### Update a customer (replace the id)
+PUT {{host}}/api/customers/00000000-0000-0000-0000-000000000000
+Content-Type: application/json
+
+{
+  "name": "Test Bakery Renamed",
+  "email": "hello@test-bakery.example",
+  "city": "Denver",
+  "country": "USA"
+}
+
+### Delete a customer (replace the id)
+DELETE {{host}}/api/customers/00000000-0000-0000-0000-000000000000
+
+### Validation error example: expect 400
+POST {{host}}/api/customers
+Content-Type: application/json
+
+{
+  "name": "",
+  "email": "not-an-email",
+  "website": "ftp://nope"
+}
